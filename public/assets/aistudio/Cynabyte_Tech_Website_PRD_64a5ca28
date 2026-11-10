@@ -1,0 +1,129 @@
+﻿Product Requirement Document (PRD)
+Cynabyte Tech Official Website Specifications
+1. Executive Overview & Brand Identity
+Cynabyte Tech is a digital agency focused on building high-performance web and mobile products. This document defines the architectural, functional, and design specifications for the official agency web application.
+Core Architecture & Identity Metrics
+Attribute
+	Specification Details
+	Agency Name
+	Cynabyte Tech
+	Tagline
+	Transforming Ideas Into Powerful Online Realities
+	Value Proposition
+	Building fast, scalable, and SEO-optimized websites and applications that drive measurable business outcomes.
+	Typography Family
+	DM Sans (Primary Sans-Serif across all breakpoints)
+	Background Color
+	Pure White (#FFFFFF)
+	Primary Text Color
+	Deep Black (#000000)
+	Accent Highlight
+	Electric Lime (#ADF802)
+	Visual Strategy
+	High-contrast light mode focus exclusively (no dark mode toggle).
+	2. Global Navigation & Architectural Policies
+Header & Navbar Behavior
+* Visual Style: Glassmorphic translucent header container featuring a backdrop blur effect (backdrop-filter: blur(12px)), light translucent border, and subtle drop shadow on scroll.
+* Scroll Dynamics: Auto-collapsing logic. The header hides smoothly via CSS transform (translateY(-100%)) upon scrolling down and re-appears smoothly (translateY(0)) upon any upward scroll action.
+* Navigation Links:
+   * Home (/)
+   * About (/about)
+   * Services (/services)
+   * Contact (/contact)
+* Header Action Button: High-contrast CTA styled with Electric Lime accent background (#ADF802), direct link to /contact.
+Global CTA Routing Rules
+* All primary and secondary call-to-action elements across every page must route explicitly to /contact unless handling localized service auto-selection.
+Official Communication Channels
+Channel
+	Identifier / Endpoint Target
+	Direct Phone
+	+2348148146268
+	WhatsApp Direct
+	+2348148146268
+	Primary Email
+	cynabytetech@gmail.com
+	LinkedIn (Company)
+	https://www.linkedin.com/company/cynabytetech/
+	LinkedIn (Founder)
+	https://www.linkedin.com/in/samueludeala/
+	X (Twitter)
+	https://x.com/cynabytetech
+	TikTok
+	tiktok.com/@cynabytetech
+	Instagram
+	https://www.instagram.com/cynabytetech
+	3. Detailed Page Specifications & Sitemap
+3.1 Home Page (/)
+* Hero Section: High-impact hero headline incorporating the core tagline. Dynamic glow or border accents powered by #ADF802. Includes primary call-to-action button routing to /contact.
+* Value Overview: Highlighting the core mission of delivering high-velocity, scalable web products.
+* Services Grid: Overview cards detailing the 5 primary agency offerings. Each card links directly to its respective sub-page route.
+* Core Process Workflow: Interactive 4-step agency execution path:
+   1. Discovery: Project alignment & technical requirement mapping.
+   2. Design: High-fidelity UI/UX design & design system architecture.
+   3. Development: Clean, performant, full-stack code implementation.
+   4. Launch: Quality assurance, SEO deployment, and production release.
+* Final Conversion Banner: Full-width accent banner directing users to /contact.
+* Explicit Exclusions: Portfolio/Work showcase section and Client Testimonials section are intentionally excluded from this release scope.
+3.2 About Page (/about)
+* Founder & Narrative Section: Recounts the founding and growth of Cynabyte Tech. Highlights how the agency was established by Samuel Udeala to bridge the gap between complex software design and scalable market readiness for emerging startups and businesses. 
+* External Anchor Rules: The anchor link for Samuel Udeala must explicitly target https://www.linkedin.com/in/samueludeala/ and open in a new browser tab (target="_blank" rel="noopener noreferrer").
+* Mission & Vision Pillars: Structured presentation focusing on code scalability, responsive precision, aesthetic minimalism, and measurable growth.
+3.3 Services Architecture & Auto-Selection Engine
+* Main Services Directory (/services): Complete catalogue listing of all core competencies.
+* Dedicated Service Routes:
+
+
+Service Title
+	Route Path
+	Core Focus
+	Web Design & Development
+	/services/web-design-development
+	Custom web applications, jamstack deployment, performant frontends.
+	Mobile App Development
+	/services/mobile-app-development
+	Cross-platform iOS and Android mobile solutions built for scale.
+	UI/UX Design
+	/services/ui-ux-design
+	User-centric product design, prototyping, design systems, and wireframing.
+	SEO Optimization
+	/services/seo-optimization
+	Technical SEO audits, page speed optimization, and dynamic indexability.
+	Branding and Design
+	/services/branding-design
+	Visual identity, logo creation, brand guidelines, and collateral design.
+	
+
+* Interactive Inquiry Logic:
+   * Every individual service page contains an "Inquire for this Service" action button.
+   * Clicking this button executes navigation to /contact passing the service slug as a URL parameter (e.g., /contact?service=web-design-development).
+   * The contact form logic reads the URL parameter on mount and automatically pre-selects the corresponding option in the Service dropdown field.
+3.4 Contact Page Interface (/contact)
+The Contact page features a balanced split two-column structural grid:
+Left Column: Direct Communication Hub
+* Clickable direct-action triggers for Phone, WhatsApp (+2348148146268), and Email (cynabytetech@gmail.com).
+* Interactive icon buttons leading to official social media profiles:
+   * LinkedIn Company (https://www.linkedin.com/company/cynabytetech/)
+   * Founder LinkedIn (https://www.linkedin.com/in/samueludeala/)
+   * X (https://x.com/cynabytetech)
+   * TikTok (tiktok.com/@cynabytetech)
+   * Instagram (https://www.instagram.com/cynabytetech)
+Right Column: Interactive Inquiry Form Engine
+* Form Inputs:
+   * Name: Text input field (Required).
+   * Service: Dropdown select menu featuring the 5 agency services (Required).
+   * Project Detail / Note: Textarea input field (Required).
+* Primary Form Action (WhatsApp Automated Link):
+   * Clicking the primary action button formats the form fields into an encoded string and opens a direct WhatsApp chat window targeting +2348148146268.
+   * Payload URL Format: https://wa.me/2348148146268?text=I%20am%20[Name],%20inquiring%20about%20your%20[Service]%20service.%0A%0A[Project%20Detail%20/%20Note]
+* Secondary Form Action (Email Mailto Trigger):
+   * Clicking the secondary email button formats the form inputs into standard mailto syntax.
+   * Subject Syntax: New Project Inquiry - [Service]
+   * Body Syntax: I am [Name], inquiring about your [Service] service.%0A%0A[Project Detail / Note]
+4. Technical Specifications, Performance & SEO
+Technical Micro-Interactions & Styling
+* Animations: Scroll-triggered element fade-ins, smooth page transitions, and subtle hover scale/glow effects leveraging #ADF802 box-shadow properties.
+* Component Styling: Glassmorphic cards with subtle semi-transparent borders. High contrast contrast ratios complying with WCAG AAA accessibility standards.
+Search Engine & Structured Data Engine
+* Schema.org Integration: Embed complete Organization and LocalBusiness JSON-LD payloads into document heads.
+* Metadata Stack: Dynamic Open Graph (OG) tag generation, Twitter Card markup, clean semantic HTML5 sectioning (<header>, <nav>, <main>, <article>, <footer>), and auto-generated XML sitemaps.
+* Performance Benchmark: Mobile-first responsive grid optimized to achieve 90+ ratings on Google Lighthouse for Performance, Accessibility, Best Practices, and SEO.
